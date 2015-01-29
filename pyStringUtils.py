@@ -3,6 +3,7 @@ __author__ = 'RanadeepPolavarapu'
 import string
 import random
 
+
 class pyStringUtils:
 
     """
@@ -10,6 +11,7 @@ class pyStringUtils:
 
     Created for use in Python 3.4. Should work for all Py3k versions.
     """
+
     def __init__(self):
         pass
 
