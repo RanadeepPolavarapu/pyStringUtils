@@ -27,7 +27,8 @@ class pyStringUtils:
         Uses alphabetical chars, numerical chars, whitespace, and punctuation to generate as specified below.
 
         Available 'chars' argument:
-            string.ascii_letters - string.ascii_lowercase + string.ascii_uppercase
+            string.ascii_letters - string.ascii_lowercase + \
+                string.ascii_uppercase
             string.ascii_lowercase - 'abcdefghijklmnopqrstuvwxyz'
             string.ascii_uppercase - 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
             string.digits - '0123456789'
@@ -43,10 +44,16 @@ class pyStringUtils:
 
     @staticmethod
     def convert_CamelCase_to_underscore(s):
+        """
+        Useful for converting JSON keys to your preferred key naming convention.
+        """
         s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', s)
         return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
 
     @staticmethod
     def convert_underscore_to_CamelCase(s):
+        """
+        Useful for converting JSON keys to your preferred key naming convention.
+        """
         s = s.lower()
         return re.sub(r'(?!^)_([a-zA-Z])', lambda m: m.group(1).upper(), s)
